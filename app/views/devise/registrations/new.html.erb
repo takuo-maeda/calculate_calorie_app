@@ -1,0 +1,43 @@
+<div class="box">
+  <div class="box-inner">
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+   <h1>新規登録</h1>
+  <div class="box-email">
+    <%= f.label :email, "Eメール" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+    <div class="box-password">
+      <div class="a-row">
+        <div class="column-left">
+         <%= f.label :password, "パスワード(最低でも#{@minimum_password_length} 文字で)" %>
+         <% if @minimum_password_length %>
+         
+         <% end %><br />
+        </div>
+    <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, "パスワード確認用" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+    </div>
+
+      <div class="box-login">
+        <%= f.submit "新規登録" %>
+        <div class="legal-text">
+          続行することで、calculate calorieの
+          <%= link_to "利用規約", "#" %>
+          および
+          <%= link_to "プライバシー規約", "#" %>
+          に同意するものとみなされます。
+        </div>
+    </div>
+<% end %>
+
+<%# <%= render "devise/shared/links" %>
+  </div>
+</div>
