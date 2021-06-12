@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_11_011005) do
+ActiveRecord::Schema.define(version: 2021_06_12_022515) do
+
+  create_table "circles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "days", null: false
+    t.string "tming", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_circles_on_user_id"
+  end
+
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "first_name_prono", null: false
+    t.string "last_name_prono", null: false
+    t.string "postal_code", null: false
+    t.string "prefecture", null: false
+    t.string "address"
+    t.string "street"
+    t.string "building"
+    t.string "phone_number", null: false
+    t.date "birthday", null: false
+    t.integer "body_weight", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,4 +52,6 @@ ActiveRecord::Schema.define(version: 2021_06_11_011005) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "circles", "users"
+  add_foreign_key "profiles", "users"
 end
