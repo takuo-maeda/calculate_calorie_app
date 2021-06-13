@@ -30,7 +30,7 @@
 
 
   <div class="box-email">
-    <%= f.label :email, "郵便番号" %>
+    <%= f.label :email, "郵便番号[-(ハイフン)必要です]" %>
     <span class="indispensable">必須</span><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -38,7 +38,7 @@
   <div class="box-email">
     <%= f.label :email, "都道府県" %>
     <span class="indispensable">必須</span><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :prefecture_id, {}, {class:"select-box", id:"item-prefecture"}) %>
   </div>
 
   <div class="box-email">
