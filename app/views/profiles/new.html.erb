@@ -4,68 +4,69 @@
 <%= form_with(model: @profile, local: true) do |f| %>
   <%# <%= render "devise/shared/error_messages", resource: resource %>
    <h1>プロフィール登録</h1>
+
   <div class="box-email">
-    <%= f.label :email, "姓" %>
+    <%= f.label :last_name, "姓" %>
     <span class="indispensable">必須</span><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "family-name" %>
   </div>
 
   <div class="box-email">
-    <%= f.label :email, "名" %>
+    <%= f.label :first_name, "名" %>
     <span class="indispensable">必須</span><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.text_field :email, autocomplete: "email" %>
   </div>
 
   <div class="box-email">
-    <%= f.label :email, "姓カナ" %>
+    <%= f.label :last_name_prono, "姓カナ" %>
     <span class="indispensable">必須</span><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
   <div class="box-email">
-    <%= f.label :email, "名カナ" %>
+    <%= f.label :first_name_prono, "名カナ" %>
     <span class="indispensable">必須</span><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
 
   <div class="box-email">
-    <%= f.label :email, "郵便番号[-(ハイフン)必要です]" %>
+    <%= f.label :postal_code, "郵便番号[-(ハイフン)必要です]" %>
     <span class="indispensable">必須</span><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
   <div class="box-email">
-    <%= f.label :email, "都道府県" %>
+    <%= f.label :prefecture_id, "都道府県" %>
     <span class="indispensable">必須</span><br />
     <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :prefecture_id, {}, {class:"select-box", id:"item-prefecture"}) %>
   </div>
 
   <div class="box-email">
-    <%= f.label :email, "市区町村" %>
+    <%= f.label :address, "市区町村" %>
     <span class="indispensable">必須</span><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
   <div class="box-email">
-    <%= f.label :email, "番地" %>
+    <%= f.label :street, "番地" %>
     <span class="indispensable">必須</span><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
   <div class="box-email">
-    <%= f.label :email, "建物名" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :building, "建物名" %><br />
+    <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
     <div class="box-email">
-    <%= f.label :email, "電話番号" %>
+    <%= f.label :phone_number, "電話番号" %>
     <span class="indispensable">必須</span><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
 <div class="box-email">
-  <%= f.label :birth_date, "生年月日" %>
+  <%= f.label :birthday, "生年月日" %>
     <span class="indispensable">必須</span>
   <%= raw sprintf(
             f.date_select(
@@ -78,14 +79,19 @@
             '年 ', '月 ') + '日' %>
 </div>
 
+  <div class="form-group">
+    <%= f.label :sex, '性別' %>
+    <%= f.select :sex, {'男性': 1, '女性': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+  </div>
+
     <div class="box-email">
     <%= f.label :email, "体重(単位：kg)" %>
     <span class="indispensable">必須</span>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
       <div class="box-login">
-        <%= f.submit "新規登録" %>
+        <%= f.submit "プロフィール登録" %>
     </div>
 <% end %>
 

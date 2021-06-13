@@ -22,17 +22,18 @@ ActiveRecord::Schema.define(version: 2021_06_12_022515) do
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "family_name", null: false
     t.string "first_name", null: false
-    t.string "last_name", null: false
+    t.string "family_name_prono", null: false
     t.string "first_name_prono", null: false
-    t.string "last_name_prono", null: false
     t.string "postal_code", null: false
-    t.string "prefecture", null: false
-    t.string "address"
-    t.string "street"
+    t.string "prefecture_id", null: false
+    t.string "address", null: false
+    t.string "street", null: false
     t.string "building"
     t.string "phone_number", null: false
     t.date "birthday", null: false
+    t.integer "sex", null: false
     t.integer "body_weight", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
