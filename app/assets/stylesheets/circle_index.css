@@ -6,6 +6,7 @@ body {
   line-height: 1.25;
   background-image: url('gabriel-gurrola-fcgPRZmTM5w-unsplash.jpg');
   background-size: cover;
+  background-repeat: repeat;
 }
 .table-title {
  font-size: 12px;
