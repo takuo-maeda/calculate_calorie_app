@@ -1,5 +1,85 @@
-いんでっくす
+<div class="outer">
 <% if user_signed_in? %>
-  <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+  <p class="sign-out"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
 <% end %>
+<table class="top-table">
+        <thead>
+            <tr>
+                <th colspan=2 class="col2">カロリー</th>
+                <td colspan=2 data-label="容量" class="price">あと●●kcal</td>
+            </tr>
+        </thead>
+    </table>   
+総摂取量 or 100gあたり
+<table class="second-table">
+        <tbody>
+            <tr>
+                <td class="col">栄養成分</td>
+                <th class="col">内容量</th>
+                <td class="col">栄養成分</td>
+                <th class="col">内容量</th>
+            </tr>
+            <tr>
+            <tr>
+                <th>カロリー</th>
+                <td data-label="価格" class="price">kcal</td>
+                <th>摂取量</th>
+                <td data-label="価格" class="price">g</td>
+            </tr>
+                <th>タンパク質</th>
+                <td data-label="容量" class="price">kcal</td>
+                <th>炭水化物</th>
+                <td data-label="価格" class="price">g</td>
+            </tr>
+            <tr>
+                <th>脂質</th>
+                <td data-label="価格" class="price">g</td>
+                <th>糖質</th>
+                <td data-label="価格" class="price">g</td>
+            </tr>
+            <tr>
+                <th>食物繊維</th>
+                <td data-label="価格" class="price">g</td>
+                <th>塩分</th>
+                <td data-label="価格" class="price">g</td>
+            </tr>
+        </tbody>
+    </table>   
+
+<table class="weight-table">
+        <tbody>
+            <tr>
+                <td colspan=2 class="col3">日付</td>
+                <th colspan=2 class="col3">体重</th>
+            </tr>
+            <tr>
+                <th>日付</th>
+                <td data-label="date" class="date">月日</td>
+                <th>体重</th>
+                <td data-label="body-weight" class="body-weight">kg</td>
+            </tr>
+            <tr>
+                <th>日付</th>
+                <td data-label="date" class="date">月日</td>
+                <th>体重</th>
+                <td data-label="body-weight" class="body-weight">kg</td>
+            </tr>
+            <tr>
+                <th>日付</th>
+                <td data-label="date" class="date">月日</td>
+                <th>体重</th>
+                <td data-label="body-weight" class="body-weight">kg</td>
+            </tr>
+            <tr>
+                <th>日付</th>
+                <td data-label="date" class="date">月日</td>
+                <th>体重</th>
+                <td data-label="body-weight" class="body-weight">kg</td>
+            </tr>
+        </tbody>
+    </table> 
+</div>
+
+
+
 
