@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_12_022515) do
+ActiveRecord::Schema.define(version: 2021_06_16_101834) do
 
   create_table "circles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "days", null: false
@@ -19,6 +19,22 @@ ActiveRecord::Schema.define(version: 2021_06_12_022515) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_circles_on_user_id"
+  end
+
+  create_table "cooked_foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "shop", null: false
+    t.string "dish", null: false
+    t.integer "calorie", null: false
+    t.integer "protein", null: false
+    t.integer "carbohydrate", null: false
+    t.integer "sugar_content", null: false
+    t.integer "lipid", null: false
+    t.integer "fiber", null: false
+    t.integer "salt", null: false
+    t.integer "meal_quantiy", null: false
+    t.integer "price", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
