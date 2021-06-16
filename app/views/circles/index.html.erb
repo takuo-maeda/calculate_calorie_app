@@ -1,11 +1,12 @@
 <div class="outer">
 <% if user_signed_in? %>
+  <p class="new-profile"><%= link_to "プロフィール登録", new_profile_path %></p>
   <p class="sign-out"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
 <% end %>
 <table class="top-table">
         <thead>
             <tr>
-                <th colspan=2 class="col2">カロリー</th>
+                <th colspan=2 class="col2">必要摂取カロリー</th>
                 <td colspan=2 data-label="容量" class="price">あと●●kcal</td>
             </tr>
         </thead>
@@ -54,25 +55,25 @@
             </tr>
             <tr>
                 <th>日付</th>
-                <td data-label="date" class="date">月日</td>
+                <td data-label="date" class="date">/</td>
                 <th>体重</th>
                 <td data-label="body-weight" class="body-weight">kg</td>
             </tr>
             <tr>
                 <th>日付</th>
-                <td data-label="date" class="date">月日</td>
+                <td data-label="date" class="date">/</td>
                 <th>体重</th>
                 <td data-label="body-weight" class="body-weight">kg</td>
             </tr>
             <tr>
                 <th>日付</th>
-                <td data-label="date" class="date">月日</td>
+                <td data-label="date" class="date">/</td>
                 <th>体重</th>
                 <td data-label="body-weight" class="body-weight">kg</td>
             </tr>
             <tr>
                 <th>日付</th>
-                <td data-label="date" class="date">月日</td>
+                <td data-label="date" class="date">/</td>
                 <th>体重</th>
                 <td data-label="body-weight" class="body-weight">kg</td>
             </tr>
@@ -82,18 +83,18 @@
 <table class="food-table">
         <tbody>
             <tr>
-                <td colspan=2 class="food">日付</td>
+                <td colspan=2 class="food">賞味・消費期限</td>
                 <th colspan=2 class="food">料理名・食材名</th>
             </tr>
             <tr>
-                <th>日付</th>
-                <td data-label="date" class="date">月日</td>
+                <th>期限</th>
+                <td data-label="date" class="date">/</td>
                 <th>品名</th>
                 <td data-label="food-name" class="food-name"></td>
             </tr>
             <tr>
-                <th>日付</th>
-                <td data-label="date" class="date">月日</td>
+                <th>期限</th>
+                <td data-label="date" class="date">/</td>
                 <th>品名</th>
                 <td data-label="food-name" class="food-name"></td>
             </tr>

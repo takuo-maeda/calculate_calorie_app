@@ -11,8 +11,10 @@
   border: 1px #ddd solid;
 }
 
-.box-inner {
+.box-inner,
+.profile-box-inner {
   padding: 20px 26px;
+  background-color: white;
 }
 
 .profile-box {

@@ -1,8 +1,11 @@
 
 
+
 body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.25;
+  background-image: url('gabriel-gurrola-fcgPRZmTM5w-unsplash.jpg');
+  background-size: cover;
 }
 .table-title {
  font-size: 12px;
@@ -11,14 +14,16 @@ body {
 }
 .outer {
   border-collapse: collapse;
-  margin: 2% auto 1% auto;
+  background-color: white;
+  margin: auto auto;
   padding: 0;
   width: 386px;
   table-layout: fixed;
   border: 3px solid white;
 }
 
-.sign-out {
+.sign-out,
+.new-profile {
   margin: 0 ;
   text-align: right;
 }
