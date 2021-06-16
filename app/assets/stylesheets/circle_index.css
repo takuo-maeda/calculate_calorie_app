@@ -54,28 +54,28 @@ body {
   padding: 0;
   width: 380px;
   table-layout: fixed;
-  border: 3px solid rgb(250, 252, 160);
+  border: 3px solid rgb(241, 241, 238);
 }
 
 table tr {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: .35em;
-}
-
-.calorie {
-  background-color: rgb(250, 195, 125);
 }
 
 .col2 {
   background-color: rgb(250, 156, 34);
 }
+.calorie {
+  background-color: rgb(250, 195, 125);
+}
+
 
 .weight {
   background-color: rgb(248, 237, 213);
 }
 
 .food {
-  background-color: rgb(250, 252, 160);
+  background-color: rgb(241, 241, 238);
 }
 table th,
 table td {
