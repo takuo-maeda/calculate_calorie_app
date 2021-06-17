@@ -8,7 +8,7 @@ height: 100vh;
   text-decoration: none;
 }
 .box {
-  width: 350px;
+  width: 320px;
   height: 450px;
   margin: 0 auto 0;
   border-radius: 4px;
@@ -22,7 +22,7 @@ height: 100vh;
 }
 
 .profile-box {
-  width: 350px;
+  width: 320px;
   height: 880px;
   margin: 0 auto 0;
   border-radius: 4px;
@@ -56,7 +56,7 @@ h1 {
 
 .box-email label, .box-password label, .box-profile {
   font-weight: 700;
-  font-size: 13px;
+  font-size: 11px;
   padding-left: 2px;
   padding-bottom: 2px;
 }
@@ -82,7 +82,7 @@ h1 {
 }
 
 .box-password a {
-  font-size: 13px;
+  font-size: 11px;
 }
 
 .box-login {
@@ -105,18 +105,18 @@ h1 {
 
 .legal-text {
   margin-top: 18px;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .remember {
-  font-size: 13px;
+  font-size: 11px;
   margin-top: 18px;
   padding-left: 3px;
 }
 
 .box-newuser p {
   text-align: center;
-  font-size: 12px;
+  font-size: 11px;
   color: #767676;
   margin-bottom: 14px;
 }
@@ -130,7 +130,7 @@ h1 {
   display: block;
   width: 100%;
   height: 31px;
-  font-size: 13px;
+  font-size: 11px;
   color: #111;
   line-height: 31px;
   text-align: center;
