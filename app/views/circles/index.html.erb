@@ -3,8 +3,8 @@
   <p class="sign-out"><%= link_to "プロフィール登録", new_profile_path %>・<%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
 <% end %>
 <p><span class="guide">スタート[1]</span>食べたものを登録しましょう</p>
-<p class="cook">どちら？<%= link_to "「外食・中食」"%>or<%= link_to "「内食」"%></p>
-<p class="uchisyoku">※外食はレストラン等での飲食、中食はコンビニ弁当・惣菜を購入して自宅や職場で食べること。内食は自宅で食材を料理して食べること、職場へ持っていくお弁当も内色とします。</p>
+<p class="cook">どちら？<%= link_to "「外食・中食」", new_cooked_food_path %>or<%= link_to "「内食」"%></p>
+<p class="uchisyoku">※外食はレストラン等での飲食、中食(なかしょく)はコンビニ弁当・惣菜を購入して自宅や職場で食べること。内食（うちしょく）は自宅で食材を料理して食べること、職場へ持っていくお弁当も内色とします。</p>
 <table class="top-table">
         <thead>
             <tr>
@@ -13,7 +13,7 @@
             </tr>
         </thead>
     </table>   
-<p class="table-title">■総摂取量 or 100gあたり</p>
+<p class="table-title">■総摂取量</p>
 <table class="second-table">
         <tbody>
             <tr>
@@ -29,7 +29,7 @@
                 <th>摂取量</th>
                 <td data-label="価格" class="price">g</td>
             </tr>
-                <th>タンパク質</th>
+                <th>蛋白質</th>
                 <td data-label="容量" class="price">kcal</td>
                 <th>炭水化物</th>
                 <td data-label="価格" class="price">g</td>
@@ -48,7 +48,7 @@
             </tr>
         </tbody>
     </table>   
-<p class="table-title">■体重表示設定 on/off</p>
+<p class="table-title">■体重表示設定 <%= link_to "表示"%>/<%= link_to "非表示"%></p>
 <table class="weight-table">
         <tbody>
             <tr>

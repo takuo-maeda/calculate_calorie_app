@@ -1,1 +1,63 @@
-いらっしゃい
+    <div class="cooked-food-box">
+
+<div class="box-profile">
+<%= form_with(model: @profile, local: true) do |f| %>
+
+  <%= f.label :birthday, "食事日" %>
+    <span class="indispensable">[２]</span>
+  <%= raw sprintf(
+            f.date_select(
+              :birthday,
+              class: 'select-birth',
+              id:"birth_date",
+              use_month_numbers: true,
+              start_year: (Time.now.year-1),
+              end_year: (Time.now.year),
+              default: Date.today,
+              date_separator: '%s'),
+            '年 ', '月 ') + '日' %>
+</div>
+
+  <div class="box-profile">
+    <%= f.label :sex, '食事時間' %>
+    <span class="indispensable">[３]</span>
+    <%= f.select :sex, {'朝食': 1, '昼食': 2, '夕食': 3, '間食': 4}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+  </div>
+<p><span class="guide">[4]</span>検索で始める</p>
+<form method="get" action="#" class="search_container">
+  <input type="text" size="25" placeholder="　料理名検索">
+  <input type="submit" value="Search">
+</form>
+
+<p><span class="guide">[4]</span>登録で始める</p>
+<div class="field">
+<label for="item_品目">店舗名</label>
+<input type="text" name="item[item]" id="item_item">
+</div>
+<div class="field">
+<label for="item_品目">料理・品名</label>
+<input type="text" name="item[item]" id="item_item">
+</div>
+
+<div class="form-group">
+    <label for="item_購入金額">購入金額</label>
+    <input type="number" class="form-control" name="item[price]" id="item_price">
+  </div>
+<div class="form-group">
+    <label for="item_購入金額">カロリー</label>
+    <input type="number" class="form-control" name="item[price]" id="item_price">kcal
+  </div>
+  <div class="form-group">
+    <label for="item_購入金額">タンパク質</label>
+    <input type="number" class="form-control" name="item[price]" id="item_price">g
+  </div>
+  <div class="form-group">
+    <label for="item_購入金額">炭水化物</label>
+    <input type="number" class="form-control" name="item[price]" id="item_price">g
+  </div>
+  <div class="form-group">
+    <label for="item_購入金額">購入金額</label>
+    <input type="number" class="form-control" name="item[price]" id="item_price">g
+  </div>
+<% end %>
+</div>
