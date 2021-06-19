@@ -22,19 +22,24 @@ ActiveRecord::Schema.define(version: 2021_06_16_101834) do
   end
 
   create_table "cooked_foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "shop", null: false
-    t.string "dish", null: false
-    t.integer "calorie", null: false
-    t.integer "protein", null: false
-    t.integer "carbohydrate", null: false
-    t.integer "sugar_content", null: false
-    t.integer "lipid", null: false
-    t.integer "fiber", null: false
-    t.integer "salt", null: false
-    t.integer "meal_quantiy", null: false
+    t.date "meal_date", null: false
+    t.integer "meal_time", null: false
+    t.string "ganre", null: false
+    t.string "shop_name", null: false
+    t.string "dish_name", null: false
     t.integer "price", null: false
+    t.integer "meal_quantity", null: false
+    t.float "calorie", null: false
+    t.float "protein", null: false
+    t.float "carbohydrate", null: false
+    t.float "sugar_content", null: false
+    t.float "lipid", null: false
+    t.float "fiber", null: false
+    t.float "salt", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_cooked_foods_on_user_id"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -70,5 +75,6 @@ ActiveRecord::Schema.define(version: 2021_06_16_101834) do
   end
 
   add_foreign_key "circles", "users"
+  add_foreign_key "cooked_foods", "users"
   add_foreign_key "profiles", "users"
 end
