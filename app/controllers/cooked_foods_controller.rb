@@ -1,7 +1,5 @@
 class CookedFoodsController < ApplicationController
-
-  def index
-  end
+  
 
   def new
     @cooked_food = CookedFood.new
@@ -10,9 +8,9 @@ class CookedFoodsController < ApplicationController
   def create
     @cooked_food = CookedFood.new(cooked_food_params)
     if @cooked_food.save
-      redirect_to root_path
+       redirect_to root_path
     else
-      render :new
+       render :new
     end
   end
 
@@ -26,8 +24,6 @@ class CookedFoodsController < ApplicationController
 
   private
   def cooked_food_params
-    params.require(:cooked_food).permit(:meal_date, :meal_time, :ganre, :shop_name, :dish_name, :price, :meal_quantity, :calorie, :protein, :carbohydrate, :sugar_content, :lipid,
-    :fiber, :salt).merge(user_id: current_user.id)
+    params.require(:cooked_food).permit(:meal_date, :meal_time, :ganre, :shop_name, :dish_name, :price, :meal_quantity, :calorie, :protein, :carbohydrate, :sugar_content, :lipid, :fiber, :salt).merge(user_id: current_user.id)
   end
-
 end

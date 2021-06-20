@@ -1,3 +1,3 @@
 class Circle < ApplicationRecord
-  has_many :cooked_food
+  # has_many :cooked_food
 end
