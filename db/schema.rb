@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2021_06_16_101834) do
     t.date "birthday", null: false
     t.integer "sex", null: false
     t.integer "body_weight", null: false
+    t.integer "tall", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

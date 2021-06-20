@@ -62,17 +62,21 @@ Things you may want to cover:
 ## cooked_foodテーブル
 |Column                     |Type      |Options                            |
 |---------------------------|-----------|----------------------------------|
-|shop<販売店>               |string     |null: false, default:""           |
-|dish<料理名>               |string     |null: false, default:""           |
-|calorie<カロリー>          |integer    |null: false, default:""           |
-|protein<タンパク質>        |integer    |null: false, default:""           |
-|carbohydrate<炭水化物>     |integer    |null: false, default:""           |
-|sugar_content<糖質>        |integer    |null: false, default:""           |
-|lipid<脂質>                |integer    |null: false, default:""           |
-|fiber<食物繊維>            |integer    |null: false, default:""           |
-|salt<塩分>                 |integer    |null: false, default:""           |
-|meal_quantity<摂取量>      |integer    |null: false, default:""           |
-|price<購入金額>            |integer    |null: false, default:""           |
+|meal_date<食事日>          |string     |null: false                       |
+|meal_time<食事どき>        |string     |null: false                       |
+|ganre<ジャンル>            |string     |null: false                       |
+|shop_name<販売店>          |string     |null: false                       |
+|dish_name<料理名>          |string     |null: false                       |
+|price<購入金額>            |integer    |null: false                       |
+|meal_quantity<摂取量>      |integer    |null: false                       |
+|calorie<カロリー>          |integer    |null: false                       |
+|protein<タンパク質>        |integer    |null: false                       |
+|carbohydrate<炭水化物>     |integer    |null: false                       |
+|sugar_content<糖質>        |integer    |null: false                       |
+|lipid<脂質>                |integer    |null: false                       |
+|fiber<食物繊維>            |integer    |null: false                       |
+|salt<塩分>                 |integer    |null: false                       |
+|user_id                    |integer    |null: false                       |
 |---------------------------|-----------|----------------------------------|
 
 ### Association

@@ -2,7 +2,6 @@
 <% if user_signed_in? %>
   <p class="sign-out"><%= link_to "プロフィール登録", new_profile_path %>・<%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
 <% end %>
-<p class="family-name"><%= @family_name %>さん</p>
 <p><span class="guide">スタート[1]</span>食べたものを登録しましょう</p>
 <p class="cook">どちら？<%= link_to "「外食・中食」", new_cooked_food_path %>or<%= link_to "「内食」"%></p>
 <p class="uchisyoku">※外食はレストラン等での飲食、中食(なかしょく)はコンビニ弁当・惣菜を購入して自宅や職場で食べること。内食（うちしょく）は自宅で食材を料理して食べること、職場へ持っていくお弁当も内色とします。</p>
@@ -10,7 +9,7 @@
         <thead>
             <tr>
                 <th colspan=2 class="col2">今日の必要摂取カロリー</th>
-                <td colspan=2 data-label="容量" class="price">あと<%= (2440-@calorie).round(0).to_s(:delimited) %>kcal</td>
+                <td colspan=2 data-label="容量" class="price">あと<%= (@set_calorie-@calorie).round(0).to_s(:delimited) %>kcal</td>
             </tr>
         </thead>
     </table>   

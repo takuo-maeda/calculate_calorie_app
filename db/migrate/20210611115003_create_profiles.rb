@@ -14,6 +14,7 @@ class CreateProfiles < ActiveRecord::Migration[6.0]
       t.date          :birthday           ,null: false
       t.integer       :sex                ,null: false
       t.integer       :body_weight        ,null: false
+      t.integer       :tall               ,null: false
       t.references    :user               ,null: false, foreign_key: true
       t.timestamps
     end
