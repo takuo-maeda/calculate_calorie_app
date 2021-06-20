@@ -1,0 +1,116 @@
+// Place all the styles related to the cooked_foods controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.cooked-food-box {
+  width: 320px;
+  height: 800px;
+  margin: 0 auto 0;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+  background-color: white;
+};
+
+// 幅
+input[type=text], input[type=number]{
+  height:19px;
+  }
+
+.cooked-food-frame, .meal-time, .ganre, .cooked-food-field { 
+    font-size:13px;
+    }
+  // 幅
+
+.indispensable-cooked {
+  background: #ea352d;
+  margin-left: 7px;
+  padding: 2px;
+  border-radius: 1px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.ganre{
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.indispensable-cooked-food {
+ margin-top: 3px;
+ margin-left: 9px;
+ font-size: 14px;
+}
+
+.box-cooked-food{
+  margin-top: 5px;
+}
+
+.meal-time{
+  margin-top: 5px;
+}
+.cook-search-container {
+  margin-left: 59px;
+}
+
+.cooked-search-container {
+  margin-top: 5px;
+}
+
+.back-to-top {
+  margin: 0 ;
+  text-align: right;
+  font-size: 11px;
+  margin-bottom: 2%;
+}
+
+.cooked-food-field{
+  margin-top: 1px;
+  margin-left:  18%;
+}
+
+.cooked-food-field label{
+  font-size: 13px;
+}
+.cooked-food-field span{
+  font-size: 13px;
+}
+
+.cooked-food-form-group{
+  margin-top: 1px;
+  margin-left:  18%;
+}
+
+.cooked-food-form-group label {
+  font-size:  13px;
+}
+
+.cooked-food-form-group span {
+  font-size:  13px;
+}
+
+// 登録
+.cooked-food-regist {
+  margin-top: 7px;
+  margin-bottom: 26px;
+}
+
+.cooked-food-regist input{
+  border-style: none;
+  width: 80%;
+  height: 31px;
+  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+  border-radius: 3px;
+  border: 1px #a88734 solid;
+  margin-left: 10%;
+}
+
+.cooked-food-regist input[type="submit"]:hover {
+  cursor: pointer;
+  background: #f0c14b;
+}
+// 登録
+
+
+

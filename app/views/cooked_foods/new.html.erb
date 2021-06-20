@@ -1,0 +1,118 @@
+<div class="cooked-food-box">
+  <p class="back-to-top"><%= link_to "top", root_path %></p>
+    <div class="cooked-food-frame">
+      <%= form_with(model: @cooked_food, local: true) do |f| %>
+      <%= f.label :meal_date, "食事日" %>
+      <span class="indispensable-cooked">[２]</span>
+        <%= raw sprintf(
+              f.date_select(
+                :meal_date,
+                class: 'select-meal-day',
+                id:"meal_date",
+                use_month_numbers: true,
+                start_year: (Time.now.year-1),
+                end_year: (Time.now.year),
+                default: Date.today,
+                date_separator: '%s'),
+              '年 ', '月 ') + '日' %>
+    
+
+          <div class="meal-time">
+            <%= f.label :meal_time, '食事時間' %>
+            <span class="indispensable-cooked">[３]</span>
+            <%= f.select :meal_time, {'朝食': 1, '昼食': 2, '夕食': 3, '間食': 4}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+          </div>
+  
+        <div class="indispensable-cooked-food"><p><span class="indispensable-cooked">[4]</span>登録で始める</p></div>
+
+    <div class="cooked-food-field">
+      <%= check_box_tag("check1") %>
+      <%= label_tag("check1", "成分表示（100gあたりの場合）") %>
+    </div>
+
+    <div class="cooked-food-field">
+      <p><%= f.label :ganre, 'ジャンル' %></p>
+      <%= f.select :ganre, {'コンビニ': 1, 'お弁当屋': 2, 'ファストフード': 3, 'スーパー': 4, 'ラーメン':5, '中華':6, '洋食':7, '和食':8, 'その他':9}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+    </div>
+
+      <div class="cooked-food-field">
+        <%= f.label :shop_name, "店名" %><br>
+        <%= f.text_field :shop_name, autofocus: true %>
+      </div>
+
+      <div class="cooked-food-field">
+        <%= f.label :dish_name, "料理名・食品名" %><br>
+        <%= f.text_field :dish_name %>
+      </div>
+
+      <div class="cooked-food-field">
+        <%= f.label :price, "購入金額" %><br>
+        <%= f.text_field :price %><span>円（税込）</span>
+      </div>
+
+      <div class="cooked-food-field">
+        <%= f.label :meal_quantity, "食品量（重さ）" %><br>
+        <%= f.text_field :meal_quantity %><span>g[ml]</span>
+      </div>
+
+      <div class="cooked-food-field">
+        <%= f.label :calorie, "カロリー" %><br>
+        <%= f.text_field :calorie %><span>kcal</span>
+      </div>
+
+      <div class="cooked-food-field">
+        <%= f.label :protein, "タンパク質" %><br>
+        <%= f.text_field :protein %><span>g</span>
+      </div>
+
+      <div class="cooked-food-field">
+        <%= f.label :carbohydrate, "炭水化物" %><br>
+        <%= f.text_field :carbohydrate %><span>g</span>
+      </div>
+
+      <div class="cooked-food-field">
+        <%= f.label :lipid, "脂質" %><br>
+        <%= f.text_field :lipid %><span>g</span>
+      </div>
+
+      <div class="cooked-food-field">
+        <%= f.label :sugar_content, "糖質" %><br>
+        <%= f.text_field :sugar_content %><span>g</span>
+      </div>
+
+      <div class="cooked-food-field">
+        <%= f.label :fiber, "食物繊維" %><br>
+        <%= f.text_field :fiber %><span>g</span>
+      </div>
+
+      <div class="cooked-food-field">
+        <%= f.label :salt, "塩分相当量" %><br>
+        <%= f.text_field :salt %><span>g</span>
+      </div>
+  <div class="cooked-food-regist">
+        <%= f.submit "登録" %>
+  </div>
+        <% end %>
+
+      <div class="indispensable-cooked-food"><p><span class="indispensable-cooked">[4]</span>検索で始める[すでに何か登録がある場合]</p></div>
+
+            <div class="cook-search-container">
+              <div class="ganre">
+                <p><%= label :ganre, 'ジャンル' %></p>
+                <%= select :ganre, {'コンビニ': 1, 'お弁当屋': 2, 'ファストフード': 3, 'スーパー': 4, 'ラーメン':5, '中華':6, '洋食':7, '和食':8, 'その他':9}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+              </div>
+
+              <p class= "cooked-search-container">
+                <%= text_field :keyword_shop, placeholder: "店舗名", class: "search-input" ,size:"28" %>
+                <%= submit_tag "検索", class: "search-btn" %>
+              </p>
+
+              <p class= "cooked-search-container">
+                <%= text_field :keyword_food, placeholder: "店舗名", class: "search-input" ,size:"28"  %>
+                <%= submit_tag "検索", class: "search-btn" %>
+              </p>
+
+          </div>
+
+      </div>
+</div>

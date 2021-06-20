@@ -1,5 +1,6 @@
 <div class="profile-box">
   <div class="profile-box-inner">
+<p class="sign-out"><%= link_to "top", root_path %></p>
 
 <%= form_with(model: @profile, local: true) do |f| %>
   <%# <%= render "devise/shared/error_messages", resource: resource %>
@@ -83,6 +84,7 @@
 
   <div class="box-profile">
     <%= f.label :sex, '性別' %>
+    <span class="indispensable">必須</span>
     <%= f.select :sex, {'男性': 1, '女性': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
   </div>
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_12_022515) do
+ActiveRecord::Schema.define(version: 2021_06_16_101834) do
 
   create_table "circles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "days", null: false
@@ -19,6 +19,27 @@ ActiveRecord::Schema.define(version: 2021_06_12_022515) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_circles_on_user_id"
+  end
+
+  create_table "cooked_foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "meal_date", null: false
+    t.integer "meal_time", null: false
+    t.string "ganre", null: false
+    t.string "shop_name", null: false
+    t.string "dish_name", null: false
+    t.integer "price", null: false
+    t.integer "meal_quantity", null: false
+    t.float "calorie", null: false
+    t.float "protein", null: false
+    t.float "carbohydrate", null: false
+    t.float "sugar_content", null: false
+    t.float "lipid", null: false
+    t.float "fiber", null: false
+    t.float "salt", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_cooked_foods_on_user_id"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -54,5 +75,6 @@ ActiveRecord::Schema.define(version: 2021_06_12_022515) do
   end
 
   add_foreign_key "circles", "users"
+  add_foreign_key "cooked_foods", "users"
   add_foreign_key "profiles", "users"
 end

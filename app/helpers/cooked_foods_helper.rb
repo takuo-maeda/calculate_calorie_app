@@ -1,0 +1,2 @@
+module CookedFoodsHelper
+end

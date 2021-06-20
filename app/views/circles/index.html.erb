@@ -1,5 +1,111 @@
-いんでっくす
+<div class="outer">
 <% if user_signed_in? %>
-  <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+  <p class="sign-out"><%= link_to "プロフィール登録", new_profile_path %>・<%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
 <% end %>
+<p class="family-name"><%= @family_name %>さん</p>
+<p><span class="guide">スタート[1]</span>食べたものを登録しましょう</p>
+<p class="cook">どちら？<%= link_to "「外食・中食」", new_cooked_food_path %>or<%= link_to "「内食」"%></p>
+<p class="uchisyoku">※外食はレストラン等での飲食、中食(なかしょく)はコンビニ弁当・惣菜を購入して自宅や職場で食べること。内食（うちしょく）は自宅で食材を料理して食べること、職場へ持っていくお弁当も内色とします。</p>
+<table class="top-table">
+        <thead>
+            <tr>
+                <th colspan=2 class="col2">今日の必要摂取カロリー</th>
+                <td colspan=2 data-label="容量" class="price">あと<%= (2440-@calorie).round(0).to_s(:delimited) %>kcal</td>
+            </tr>
+        </thead>
+    </table>   
+<p class="table-title">■総摂取量</p>
+<table class="second-table">
+        <tbody>
+            <tr>
+                <td class="calorie">栄養成分</td>
+                <th class="calorie">内容量</th>
+                <td class="calorie">栄養成分</td>
+                <th class="calorie">内容量</th>
+            </tr>
+            <tr>
+            <tr>
+                <th>カロリー</th>
+                <td data-label="価格" class="price"><%= @calorie %>kcal</td>
+                <th>摂取量</th>
+                <td data-label="価格" class="price"><%= @meal_quantity %>g</td>
+            </tr>
+                <th>蛋白質</th>
+                <td data-label="容量" class="price"><%= @protein %>kcal</td>
+                <th>炭水化物</th>
+                <td data-label="価格" class="price"><%= @carbohydrate %>g</td>
+            </tr>
+            <tr>
+                <th>脂質</th>
+                <td data-label="価格" class="price"><%= @lipid %>g</td>
+                <th>糖質</th>
+                <td data-label="価格" class="price"><%= @sugar_content %>g</td>
+            </tr>
+            <tr>
+                <th>食物繊維</th>
+                <td data-label="価格" class="price"><%= @fiber %>g</td>
+                <th>塩分</th>
+                <td data-label="価格" class="price"><%= @salt %>g</td>
+            </tr>
+        </tbody>
+    </table>   
+<p class="table-title">■体重表示設定 <%= link_to "表示"%>/<%= link_to "非表示"%></p>
+<table class="weight-table">
+        <tbody>
+            <tr>
+                <td colspan=2 class="weight">日付</td>
+                <th colspan=2 class="weight">体重</th>
+            </tr>
+            <tr>
+                <th>日付</th>
+                <td data-label="date" class="date">/</td>
+                <th>体重</th>
+                <td data-label="body-weight" class="body-weight">kg</td>
+            </tr>
+            <tr>
+                <th>日付</th>
+                <td data-label="date" class="date">/</td>
+                <th>体重</th>
+                <td data-label="body-weight" class="body-weight">kg</td>
+            </tr>
+            <tr>
+                <th>日付</th>
+                <td data-label="date" class="date">/</td>
+                <th>体重</th>
+                <td data-label="body-weight" class="body-weight">kg</td>
+            </tr>
+            <tr>
+                <th>日付</th>
+                <td data-label="date" class="date">/</td>
+                <th>体重</th>
+                <td data-label="body-weight" class="body-weight">kg</td>
+            </tr>
+        </tbody>
+    </table> 
+<p class="table-title">■冷蔵庫内の賞味期限が切れそうな料理・食材</p>
+<p class="uchisyoku">※作りおきは５日間、残り物は２日で設定します</p>
+<table class="food-table">
+        <tbody>
+            <tr>
+                <td colspan=2 class="food">賞味・消費期限</td>
+                <th colspan=2 class="food">料理名・食材名</th>
+            </tr>
+            <tr>
+                <th>期限</th>
+                <td data-label="date" class="date">/</td>
+                <th>品名</th>
+                <td data-label="food-name" class="food-name"></td>
+            </tr>
+            <tr>
+                <th>期限</th>
+                <td data-label="date" class="date">/</td>
+                <th>品名</th>
+                <td data-label="food-name" class="food-name"></td>
+            </tr>
+        </tbody>
+    </table> 
+</div>
+
+
+
 
