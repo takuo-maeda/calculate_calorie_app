@@ -1,8 +1,14 @@
 class CirclesController < ApplicationController
   
   def index
-     @set_calorie = (ideal_cal * ideal_cal * 22 * 35)/10000
-    #  @family_name = Profile.find_by(user_id: current_user.id).family_name
+
+    if Profile.pluck(:user_id).include?(set_id)
+        @set_calorie = (ideal_cal * ideal_cal * 22 * 35)/10000
+        @email_display = Profile.find_by(user_id: current_user.id).family_name
+      else
+        @email_display = User.find(set_id).email
+        @set_calorie = 2400
+     end
      day = Date.today
      @calorie = CookedFood.where(meal_date: day).where(user_id: current_user.id).sum(:calorie).round(3)
      @protein = CookedFood.where(meal_date: day).where(user_id: current_user.id).sum(:protein).round(3)
@@ -19,7 +25,15 @@ class CirclesController < ApplicationController
 
   private
 
-  def ideal_cal
-     set_tall = Profile.find_by(user_id: current_user.id).tall
+  def set_id
+    set_id = current_user.id
   end
+
+  def ideal_cal
+    if Profile.pluck(:user_id).include?(set_id)
+      set_tall = Profile.find_by(user_id: current_user.id).tall
+    end
+  end
+  
+
 end

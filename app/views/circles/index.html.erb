@@ -8,7 +8,7 @@
 <table class="top-table">
         <thead>
             <tr>
-                <th colspan=2 class="col2">今日の必要摂取カロリー</th>
+                <th colspan=2 class="col2"><p class="email_display"><%= @email_display %>さん<br>今日の必要摂取カロリー</span></th>
                 <td colspan=2 data-label="容量" class="price">あと<%= (@set_calorie-@calorie).round(0).to_s(:delimited) %>kcal</td>
             </tr>
         </thead>
