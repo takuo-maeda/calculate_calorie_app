@@ -19,6 +19,11 @@ a:hover {
   color: white;
 }
 
+.email_display {
+  font-size: 10px;
+}
+
+
 .guide {
   background: #ea352d;
   margin-left: 7px;
