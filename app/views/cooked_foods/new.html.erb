@@ -56,7 +56,7 @@
       </div>
 
       <div class="cooked-food-field">
-        <%= f.label :calorie, "カロリー" %><br>
+        <%= f.label :calorie, "エネルギー" %><br>
         <%= f.text_field :calorie %><span>kcal</span>
       </div>
 
@@ -95,24 +95,24 @@
         <% end %>
 
       <div class="indispensable-cooked-food"><p><span class="indispensable-cooked">[4]</span>検索で始める[すでに何か登録がある場合]</p></div>
-
+        <%= form_with(model: @keyword, url: search_cooked_foods_path, local: true, method: :get, class: "search") do |form| %>
             <div class="cook-search-container">
               <div class="ganre">
-                <p><%= label :ganre, 'ジャンル' %></p>
-                <%= select :ganre, {'コンビニ': 1, 'お弁当屋': 2, 'ファストフード': 3, 'スーパー': 4, 'ラーメン':5, '中華':6, '洋食':7, '和食':8, 'その他':9}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+                <p><%= form.label :ganre, 'ジャンル' %></p>
+                <%= form.select :ganre, {'コンビニ': 1, 'お弁当屋': 2, 'ファストフード': 3, 'スーパー': 4, 'ラーメン':5, '中華':6, '洋食':7, '和食':8, 'その他':9}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
               </div>
 
               <p class= "cooked-search-container">
-                <%= text_field :keyword_shop, placeholder: "店舗名", class: "search-input" ,size:"28" %>
-                <%= submit_tag "検索", class: "search-btn" %>
+                <%= form.text_field :keyword_shop, placeholder: "店舗名", class: "search-input" ,size:"28" %>
+                <%= form.submit "検索", class: "search-btn" %>
               </p>
 
               <p class= "cooked-search-container">
-                <%= text_field :keyword_food, placeholder: "店舗名", class: "search-input" ,size:"28"  %>
-                <%= submit_tag "検索", class: "search-btn" %>
+                <%= form.text_field :keyword_food, placeholder: "店舗名", class: "search-input" ,size:"28"  %>
+                <%= form.submit "検索", class: "search-btn" %>
               </p>
 
           </div>
-
+        <% end %>
       </div>
 </div>
