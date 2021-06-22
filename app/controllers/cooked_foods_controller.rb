@@ -15,8 +15,9 @@ class CookedFoodsController < ApplicationController
   end
 
   def search
-    @keyword = CookedFood.where('shop_name LIKE(?)', "%#{@keyword}%")
-    render "new"
+    #Viewのformで取得したパラメータをモデルに渡す
+    @shops = CookedFood.search(params[:search])
+    render :new
   end
 
 
