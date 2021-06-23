@@ -7,7 +7,7 @@ class CreateCookedFoods < ActiveRecord::Migration[6.0]
       t.string            :shop_name     ,null: false
       t.string            :dish_name     ,null: false
       t.integer           :price         ,null: false
-      t.integer           :meal_quantity  ,null: false
+      t.integer           :meal_quantity ,null: false
       t.float             :calorie       ,null: false
       t.float             :protein       ,null: false
       t.float             :carbohydrate  ,null: false

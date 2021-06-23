@@ -10,6 +10,9 @@ class CirclesController < ApplicationController
         @set_calorie = 2400
      end
      @day = Date.today
+     @days = %w(日 月 火 水 木 金 土)[Date.today.wday]
+     body_weight = Profile.where(user_id: current_user.id).pluck(:body_weight)
+     @body = (body_weight[0]*1)
      @calorie = CookedFood.where(meal_date: @day).where(user_id: current_user.id).sum(:calorie).round(3)
      @protein = CookedFood.where(meal_date: @day).where(user_id: current_user.id).sum(:protein).round(3)
      @carbohydrate = CookedFood.where(meal_date: @day).where(user_id: current_user.id).sum(:carbohydrate).round(3)

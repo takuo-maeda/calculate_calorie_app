@@ -13,7 +13,7 @@
             </tr>
         </thead>
     </table>   
-<p class="table-title">■総摂取量(<%= @day %>)</p>
+<p class="table-title">■総摂取量(<%= @day %>-<%= @days%>)</p>
 <table class="second-table">
         <tbody>
             <tr>
@@ -57,27 +57,21 @@
             </tr>
             <tr>
                 <th>日付</th>
-                <td data-label="date" class="date">/</td>
+                <td data-label="date" class="date"><%= @day.month %>/<%= @day.day %></td>
                 <th>体重</th>
-                <td data-label="body-weight" class="body-weight">kg</td>
+                <td data-label="body-weight" class="body-weight"><%= @body %>kg</td>
             </tr>
             <tr>
                 <th>日付</th>
-                <td data-label="date" class="date">/</td>
+                <td data-label="date" class="date"><%= @day.month %>/<%= @day.day-1 %></td>
                 <th>体重</th>
-                <td data-label="body-weight" class="body-weight">kg</td>
+                <td data-label="body-weight" class="body-weight"><%= @body %>kg</td>
             </tr>
             <tr>
                 <th>日付</th>
-                <td data-label="date" class="date">/</td>
+                <td data-label="date" class="date"><%= @day.month %>/<%= @day.day-2 %></td>
                 <th>体重</th>
-                <td data-label="body-weight" class="body-weight">kg</td>
-            </tr>
-            <tr>
-                <th>日付</th>
-                <td data-label="date" class="date">/</td>
-                <th>体重</th>
-                <td data-label="body-weight" class="body-weight">kg</td>
+                <td data-label="body-weight" class="body-weight"><%= @body %>kg</td>
             </tr>
         </tbody>
     </table> 
