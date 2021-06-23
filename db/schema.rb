@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_16_101834) do
+ActiveRecord::Schema.define(version: 2021_06_20_124333) do
 
   create_table "circles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "days", null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_06_16_101834) do
 
   create_table "cooked_foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "meal_date", null: false
-    t.integer "meal_time", null: false
+    t.integer "meal_time_id", null: false
     t.string "ganre", null: false
     t.string "shop_name", null: false
     t.string "dish_name", null: false
@@ -42,13 +42,18 @@ ActiveRecord::Schema.define(version: 2021_06_16_101834) do
     t.index ["user_id"], name: "index_cooked_foods_on_user_id"
   end
 
+  create_table "home_cooked_meals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name", null: false
     t.string "first_name", null: false
     t.string "family_name_prono", null: false
     t.string "first_name_prono", null: false
     t.string "postal_code", null: false
-    t.string "prefecture_id", null: false
+    t.integer "prefecture_id", null: false
     t.string "address", null: false
     t.string "street", null: false
     t.string "building"

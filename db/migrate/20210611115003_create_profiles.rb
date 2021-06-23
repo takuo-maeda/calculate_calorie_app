@@ -6,7 +6,7 @@ class CreateProfiles < ActiveRecord::Migration[6.0]
       t.string        :family_name_prono  ,null: false
       t.string        :first_name_prono   ,null: false
       t.string        :postal_code        ,null: false
-      t.string        :prefecture_id      ,null: false
+      t.integer       :prefecture_id      ,null: false
       t.string        :address            ,null: false
       t.string        :street             ,null: false
       t.string        :building
