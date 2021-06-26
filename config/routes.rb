@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     end
   end
   resources :home_cooked_meals, only: [:new, :create]
+  resources :cookings, only: [:new, :create]
+
 end

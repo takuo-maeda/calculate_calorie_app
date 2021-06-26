@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_20_124333) do
+ActiveRecord::Schema.define(version: 2021_06_23_073520) do
 
   create_table "circles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "days", null: false
@@ -40,6 +40,20 @@ ActiveRecord::Schema.define(version: 2021_06_20_124333) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_cooked_foods_on_user_id"
+  end
+
+  create_table "cookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "meal_name", null: false
+    t.integer "meal_weight", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "fridges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "food_name", null: false
+    t.integer "food_weight", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "home_cooked_meals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

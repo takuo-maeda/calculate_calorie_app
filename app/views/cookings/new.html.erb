@@ -1,0 +1,43 @@
+<div class="box">
+
+<%= form_with model: @form, local: true do |f| %>
+  <%= f.text_field :meal_name %>
+  <%= f.text_field :meal_weight %>
+  <%= f.text_field :food_name %>
+  <%= f.text_field :food_weight %>
+  <%= f.submit %>
+<% end %>
+
+<table class="table060">
+  <tbody>
+    <tr>
+      <th>食材</th>
+      <td>購入(g)</td>
+      <td>残(g)</td>
+      <td> 調理(g)</td>
+      <td>有効期限</td>
+    </tr>
+    <tr>
+      <th>Sample</th>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <th>Sample</th>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <th>Sample</th>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+</div>

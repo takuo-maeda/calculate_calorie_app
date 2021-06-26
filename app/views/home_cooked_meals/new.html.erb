@@ -1,4 +1,17 @@
 <div class="cooked-food-box">
   <p class="back-to-top"><%= link_to "top", root_path %></p>
-いらっしゃい
+
+
+<%= form_for(@user) do |f| %>
+  <%# 追加 %>
+  <%= f.fields_for :profile do |profile_fields| %>
+    <%= profile_fields.text_field :nickname %>
+  <% end %>
+
+  <%# 追加 %>
+  <%= f.fields_for :academics do |academics_fields| %>
+    <%= academics_fields.text_field :school_name %>
+  <% end %>
+<% end %>
+
 </div>
