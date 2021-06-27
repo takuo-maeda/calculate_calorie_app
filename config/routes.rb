@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     end
   end
   resources :home_cooked_meals, only: [:new, :create]
-  resources :cookings, only: [:new, :create]
+  resources :cookings, only: [:new, :create, :edit, :update]
+  resources :fridges, only: [:new, :create, :edit, :update]
+  resources :foods, only: [:new, :create, :edit, :update]
+  resources :cooking_food_fridges, only: [:new, :create, :edit, :update]
 
 end

@@ -1,43 +1,28 @@
 class CookingsController < ApplicationController
-  def new
-    @form = CookingFridge.new
-  end
-
-  def create
-    @form = CookingFridge.new(post_params)
-
-    if @form.save
-      redirect_to posts_path, notice: 'The post has been created.'
-    else
-      render :new
+    before_action :authenticate_user!, only:[:new]
+  
+    def index
+      @cookings = Cooking.all.includes(:food).order('created_at DESC')
     end
-  end
-
-  def edit
-    load_post
-
-    @form = PostForm.new(post: @post)
-  end
-
-  def update
-    load_post
-
-    @form = PostForm.new(post_params, post: @post)
-
-    if @form.save
-      redirect_to @post, notice: 'The post has been updated.'
-    else
-      render :edit
+  
+    def new
+      @cooking = CookingFoodFridge.new
     end
+  
+    def create
+      @cooking = CookingFoodFridge.new(cooking_params)
+      if @cooking.valid?
+        @cooking.save
+        return redirect_to root_path
+      else
+        render :new
+      end
+    end
+  
+    private
+  
+    def car_params
+      params.require(:cooking_food_fridge).permit(:meal_name, :meal_weight, :food_name, :food_weight).merge(cook_id: cooking.id,food_id: food.id)
+    end
+    
   end
-
-  private
-
-  def post_params
-    params.require(:cooking).permit(:meal_name, :meal_weight, :food_name, :food_weight)
-  end
-
-  def load_post
-    @cooking = current_user.cookings.find(params[:id])
-  end
-end

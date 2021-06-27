@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_23_073520) do
+ActiveRecord::Schema.define(version: 2021_06_27_063024) do
 
   create_table "circles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "days", null: false
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 2021_06_23_073520) do
     t.index ["user_id"], name: "index_cooked_foods_on_user_id"
   end
 
+  create_table "cooking_foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "cooking_id", null: false
+    t.bigint "food_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cooking_id"], name: "index_cooking_foods_on_cooking_id"
+    t.index ["food_id"], name: "index_cooking_foods_on_food_id"
+  end
+
   create_table "cookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "meal_name", null: false
     t.integer "meal_weight", null: false
@@ -49,9 +58,16 @@ ActiveRecord::Schema.define(version: 2021_06_23_073520) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "fridges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "food_name", null: false
     t.integer "food_weight", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "fridges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "weight", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -96,5 +112,7 @@ ActiveRecord::Schema.define(version: 2021_06_23_073520) do
 
   add_foreign_key "circles", "users"
   add_foreign_key "cooked_foods", "users"
+  add_foreign_key "cooking_foods", "cookings"
+  add_foreign_key "cooking_foods", "foods"
   add_foreign_key "profiles", "users"
 end
