@@ -60,7 +60,7 @@ Things you may want to cover:
 
 
 ## cooked_foodテーブル
-|Column                     |Type      |Options                            |
+|Column                     |Type       |Options                           |
 |---------------------------|-----------|----------------------------------|
 |meal_date<食事日>          |string     |null: false                       |
 |meal_time<食事どき>        |string     |null: false                       |
@@ -81,3 +81,35 @@ Things you may want to cover:
 
 ### Association
 - has_one :user
+
+
+
+## cookingテーブル
+|Column                     |Type       |Options                           |
+|---------------------------|-----------|----------------------------------|
+|meal_name<食事名>          |string     |null: false                       |
+|meal_weight<食事量>        |string     |null: false                       |
+|---------------------------|-----------|----------------------------------|
+### Association
+- has_many :foods
+
+
+## cooking_foodテーブル
+|Column                     |Type       |Options                           |
+|---------------------------|-----------|----------------------------------|
+|cooking_id                 |references |null: false, foreign_key, true    |
+|food_id                    |references |null: false, foreign_key, true    |
+|---------------------------|-----------|----------------------------------|
+### Association
+- belongs_to :cooking
+- belongs_to :food
+
+## foodテーブル
+|Column                     |Type       |Options                           |
+|---------------------------|-----------|----------------------------------|
+|food_name<食材名>          |string     |null: false                       |
+|food_weight<食材量>        |string     |null: false                       |
+|---------------------------|-----------|----------------------------------|
+### Association
+- has_many :cookings
+

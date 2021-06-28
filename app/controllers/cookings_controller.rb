@@ -21,8 +21,8 @@ class CookingsController < ApplicationController
   
     private
   
-    def car_params
-      params.require(:cooking_food_fridge).permit(:meal_name, :meal_weight, :food_name, :food_weight).merge(cook_id: cooking.id,food_id: food.id)
+    def cooking_params
+      params.require(:cooking_food_fridge).permit(:meal_name, :meal_weight, :food_name, :food_weight)
     end
     
   end
