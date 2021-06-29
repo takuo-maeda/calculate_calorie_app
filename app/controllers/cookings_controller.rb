@@ -1,24 +1,20 @@
 class CookingsController < ApplicationController
     before_action :authenticate_user!, only:[:new]
   
-    def index
-      @cookings = Cooking.all.includes(:food).order('created_at DESC')
-    end
-  
     def new
-      @cooking = CookingFoodFridge.new
+      @form = CookingFoodFridge.new
     end
   
     def create
-      @cooking = CookingFoodFridge.new(cooking_params)
-      if @cooking.valid?
-        @cooking.save
+      @form = CookingFoodFridge.new(cooking_params)
+      if @form.valid?
+        @form.save
         return redirect_to root_path
       else
         render :new
       end
     end
-  
+    
     private
   
     def cooking_params
