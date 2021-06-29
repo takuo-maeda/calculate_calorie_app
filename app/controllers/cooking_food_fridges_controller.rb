@@ -15,6 +15,29 @@ class CookingFoodFridgesController < ApplicationController
     end
   end
   
+  def edit
+    @cooking = Cooking.find(params[:id])
+    @form = CookingFoodFridge.new(cooking: @cooking)
+  end
+
+  def update
+    @cooking = Cooking.find(params[:id])
+    @form = CookingFoodFridge.new(cooking_params, cooking: @cooking)
+    if @form.valid?
+      @form.save
+      return redirect_to cooking_path(@cooking)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @cooking = Cooking.find(params[:id])
+    if @cooking.destroy
+      redirect_to root_path
+    end
+  end
+
   private
 
   def cooking_params
