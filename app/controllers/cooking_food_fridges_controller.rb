@@ -41,7 +41,7 @@ class CookingFoodFridgesController < ApplicationController
   private
 
   def cooking_params
-    params.require(:cooking_food_fridge).permit(:meal_name, :meal_weight, :food_name, :food_weight)
+    params.require(:cooking).permit(:meal_name, :meal_weight, :food_name, :food_weight)
   end
   
 end

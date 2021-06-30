@@ -20,12 +20,12 @@ class CookingFoodFridge
   def save
 
     ActiveRecord::Base.transaction do
-      @cooking.update(meal_name: meal_name, meal_weight: meal_weight, food_name: food_name, food_weight: food_weight)
+      @cooking.update(meal_name: meal_name, meal_weight: meal_weight)
 
       #// @carに紐付くタグがあれば、car_tagsテーブルの紐付くレコードを全て消去する
-      @cooking.cooking_food.each do |food|
-        food.delete
-      end
+      # @cooking.cooking_food.each do |food|
+      #   food.delete
+      # end
 
       #// tag_listのタグの数だけ、tagsテーブルと、car_tagsテーブルに保存する
         food = Food.where(food_name: food_name, food_weight: food_weight).first_or_initialize
