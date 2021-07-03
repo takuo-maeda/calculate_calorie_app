@@ -10,6 +10,7 @@ class CookingFoodFridge
     end
   #// carがすでに保存されているものか、新規のものかで、PUTとPATCHを分ける
   delegate :persisted?, to: :cooking
+  binding.pry
 
   def initialize(attributes = nil, cooking: Cooking.new)
     @cooking = cooking

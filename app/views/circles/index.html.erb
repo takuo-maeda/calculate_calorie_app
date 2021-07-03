@@ -8,7 +8,7 @@
 <table class="top-table">
         <thead>
             <tr>
-                <th colspan=2 class="col2"><p class="email_display"><%= @email_display %>さんの本日必要カロリー(標準体重ではなく理想体重を身長から算出します)</p></th>
+                <th colspan=2 class="col2"><p class="email_display"><%= @email_display %>さんの本日必要カロリー(標準体重ではなく理想体重を身長から算出します。プロフィール登録をお願いします)</p></th>
                 <td colspan=2 data-label="容量" class="price">あと<%= (@set_calorie-@calorie).round(0).to_s(:delimited) %>kcal</td>
             </tr>
         </thead>

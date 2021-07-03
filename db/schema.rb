@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_27_063024) do
+ActiveRecord::Schema.define(version: 2021_07_03_023622) do
 
   create_table "circles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "days", null: false
@@ -54,6 +54,19 @@ ActiveRecord::Schema.define(version: 2021_06_27_063024) do
   create_table "cookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "meal_name", null: false
     t.integer "meal_weight", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "food_stuffs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "food_stuff", null: false
+    t.integer "calorie", null: false
+    t.float "protein", null: false
+    t.float "carbohydrate", null: false
+    t.float "sugar_content", null: false
+    t.float "lipid", null: false
+    t.float "fiber", null: false
+    t.float "salt", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
