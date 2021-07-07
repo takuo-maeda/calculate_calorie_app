@@ -8,15 +8,22 @@
 
 require "csv"
 
-CSV.foreach('db/本表-表1.csv', headers: true)  do |row|
-  FoodStuff.create(
-  food_stuff: row['food_name'],
+CSV.foreach('db/Sheet1-表1.csv', headers: true)  do |row|
+  CookedFood.create(
+  meal_date: row['meal_data'],
+  meal_time_id: row['meal_time_id'],
+  shop_name: row['shop_name'],
+  dish_name: row['dish_name'],
+  ganre: row['ganre'],
+  price: row['price'],
+  meal_quantity: row['meal_quantity'],
   calorie: row['calorie'],
   protein: row['protein'],
   carbohydrate: row['carbohydrate'],
   sugar_content: row['sugar_content'],
-  salt: row['salt'],
-  lipid: row['lopid'],
+  lipid: row['lipid'],
   fiber: row['fiber'],
+  salt: row['salt'],
+  user_id: row['user_id'],
 )
 end
