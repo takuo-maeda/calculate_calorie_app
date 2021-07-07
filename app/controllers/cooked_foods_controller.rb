@@ -18,8 +18,23 @@ class CookedFoodsController < ApplicationController
     render :new
   end
 
+  def edit
+    @shop = CookedFood.find(params[:id])
+  end
+
+  def update
+    shop = CookedFood.find(params[:id])
+    shop.update(cooked_food_paramss)
+  end
+  
+
+  private
+
 
   def cooked_food_params
     params.require(:cooked_food).permit(:meal_date, :meal_time_id, :ganre, :shop_name, :dish_name, :price, :meal_quantity, :calorie, :protein, :carbohydrate, :sugar_content, :lipid, :fiber, :salt).merge(user_id: current_user.id)
+  end
+  def cooked_food_paramss
+    params.require(:cooked_food).permit(:meal_date, :meal_time_id, :ganre, :shop_name, :dish_name, :price, :meal_quantity, :calorie, :protein, :carbohydrate, :sugar_content, :lipid, :fiber, :salt)
   end
 end

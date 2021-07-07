@@ -1,7 +1,7 @@
 <div class="cooked-food-box">
   <p class="back-to-top"><%= link_to "top", root_path %></p>
     <div class="cooked-food-frame">
-      <%= form_with(model: @cooked_food, local: true) do |f| %>
+      <%= form_with(model: @shop, local: true) do |f| %>
       <%= f.label :meal_date, "食事日" %>
       <span class="indispensable-cooked">[２]</span>
         <%= raw sprintf(
