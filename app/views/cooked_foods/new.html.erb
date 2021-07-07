@@ -18,9 +18,9 @@
     
 
           <div class="meal-time">
-            <%= f.label :meal_time, '食事時間' %>
+            <%= f.label :meal_time, "食事時間" %>
             <span class="indispensable-cooked">[３]</span>
-            <%= f.select :meal_time, {'朝食': 1, '昼食': 2, '夕食': 3, '間食': 4}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+            <%= f.collection_select(:meal_time_id, MealTime.all, :id, :meal_time_id, {}, {class:"select-box", id:"item-meal-time"}) %>
           </div>
   
         <div class="indispensable-cooked-food"><p><span class="indispensable-cooked">[4]</span>登録で始める</p></div>
@@ -51,12 +51,12 @@
       </div>
 
       <div class="cooked-food-field">
-        <%= f.label :meal_quantity, "食品量（重さ）" %><br>
+        <%= f.label :meal_quantity, "内容量（重さなど）" %><br>
         <%= f.text_field :meal_quantity %><span>g[ml]</span>
       </div>
 
       <div class="cooked-food-field">
-        <%= f.label :calorie, "カロリー" %><br>
+        <%= f.label :calorie, "エネルギー" %><br>
         <%= f.text_field :calorie %><span>kcal</span>
       </div>
 
@@ -95,24 +95,31 @@
         <% end %>
 
       <div class="indispensable-cooked-food"><p><span class="indispensable-cooked">[4]</span>検索で始める[すでに何か登録がある場合]</p></div>
-
+        <%= form_with url: search_cooked_foods_path, method: :get, local: true do |search| %>
             <div class="cook-search-container">
-              <div class="ganre">
-                <p><%= label :ganre, 'ジャンル' %></p>
-                <%= select :ganre, {'コンビニ': 1, 'お弁当屋': 2, 'ファストフード': 3, 'スーパー': 4, 'ラーメン':5, '中華':6, '洋食':7, '和食':8, 'その他':9}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
-              </div>
+              <%# <div class="ganre">
+                <%# <p><%= search.label :ganre, 'ジャンル' </p> %>
+                <%# <%= search.select :ganre, {'コンビニ': 1, 'お弁当屋': 2, 'ファストフード': 3, 'スーパー': 4, 'ラーメン':5, '中華':6, '洋食':7, '和食':8, 'その他':9}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+              <%# </div> %>
 
               <p class= "cooked-search-container">
-                <%= text_field :keyword_shop, placeholder: "店舗名", class: "search-input" ,size:"28" %>
-                <%= submit_tag "検索", class: "search-btn" %>
+                <%= search.text_field :search, placeholder: "店名" ,size:"28" %>
+                <%= search.submit "検索" %>
               </p>
 
-              <p class= "cooked-search-container">
-                <%= text_field :keyword_food, placeholder: "店舗名", class: "search-input" ,size:"28"  %>
-                <%= submit_tag "検索", class: "search-btn" %>
-              </p>
+              <%# <p class= "cooked-search-container">
+                <%= form.text_field :keyword_food, placeholder: "店舗名", class: "search-input" ,size:"28"  %>
+                <%# <%= form.submit "検索", class: "search-btn" %>
+              <%# </p> %>
 
           </div>
-
+        <% end %>
+        <div class="search">
+          <% if params[:search].present? %>
+            <% @shops.each do |shop|%>
+            <%= shop.meal_date%> <%= shop.meal_time.meal_time_id %> <%= shop.dish_name %><%= link_to "編集", edit_cooked_food_path(shop) %><br>
+          <% end %>
+        <% end %>
+        </div>
       </div>
 </div>

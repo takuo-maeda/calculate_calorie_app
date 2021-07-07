@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_16_101834) do
+ActiveRecord::Schema.define(version: 2021_07_03_023622) do
 
   create_table "circles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "days", null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_06_16_101834) do
 
   create_table "cooked_foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "meal_date", null: false
-    t.integer "meal_time", null: false
+    t.integer "meal_time_id", null: false
     t.string "ganre", null: false
     t.string "shop_name", null: false
     t.string "dish_name", null: false
@@ -42,13 +42,61 @@ ActiveRecord::Schema.define(version: 2021_06_16_101834) do
     t.index ["user_id"], name: "index_cooked_foods_on_user_id"
   end
 
+  create_table "cooking_foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "cooking_id", null: false
+    t.bigint "food_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cooking_id"], name: "index_cooking_foods_on_cooking_id"
+    t.index ["food_id"], name: "index_cooking_foods_on_food_id"
+  end
+
+  create_table "cookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "meal_name", null: false
+    t.integer "meal_weight", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "food_stuffs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "food_stuff", null: false
+    t.integer "calorie", null: false
+    t.float "protein", null: false
+    t.float "carbohydrate", null: false
+    t.float "sugar_content", null: false
+    t.float "lipid", null: false
+    t.float "fiber", null: false
+    t.float "salt", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "food_name", null: false
+    t.integer "food_weight", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "fridges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "weight", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "home_cooked_meals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name", null: false
     t.string "first_name", null: false
     t.string "family_name_prono", null: false
     t.string "first_name_prono", null: false
     t.string "postal_code", null: false
-    t.string "prefecture_id", null: false
+    t.integer "prefecture_id", null: false
     t.string "address", null: false
     t.string "street", null: false
     t.string "building"
@@ -77,5 +125,7 @@ ActiveRecord::Schema.define(version: 2021_06_16_101834) do
 
   add_foreign_key "circles", "users"
   add_foreign_key "cooked_foods", "users"
+  add_foreign_key "cooking_foods", "cookings"
+  add_foreign_key "cooking_foods", "foods"
   add_foreign_key "profiles", "users"
 end

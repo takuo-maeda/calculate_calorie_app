@@ -1,0 +1,9 @@
+<div class="box">
+<%= form_with model: @form, local: true do |f| %>
+  <%= f.text_field :meal_name %>
+  <%= f.text_field :meal_weight %>
+  <%= f.text_field :food_name %>
+  <%= f.text_field :food_weight %>
+  <%= f.submit %>
+<% end %>
+</div>
