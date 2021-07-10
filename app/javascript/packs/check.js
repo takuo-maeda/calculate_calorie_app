@@ -3,11 +3,13 @@ window.addEventListener("change", () => {
   const checkbox = document.getElementById("check1");
 
   if (checkbox.checked === false) {
-    console.log("チェックが外れた");
+   const input = document.getElementById('meal-quantity');
+   input.disabled = true;
   }
 
   if (checkbox.checked === true) {
-    console.log("チェックされた");
+   const input = document.getElementById('meal-quantity');
+   input.disabled = false;
   }
 
 });

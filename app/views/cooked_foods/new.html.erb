@@ -52,7 +52,7 @@
 
       <div class="cooked-food-field">
         <%= f.label :meal_quantity, "内容量（重さなど）" %><br>
-        <%= f.text_field :meal_quantity %><span>g[ml]</span>
+        <%= f.text_field :meal_quantity, id:"meal-quantity" %><span>g[ml]</span>
       </div>
 
       <div class="cooked-food-field">
@@ -77,7 +77,7 @@
 
       <div class="cooked-food-field">
         <%= f.label :sugar_content, "糖質" %><br>
-        <%= f.text_field :sugar_content %><span>g</span>
+        <%= f.text_field :sugar_content, id:"sugar-content" %><span>g</span>
       </div>
 
       <div class="cooked-food-field">
