@@ -26,8 +26,8 @@
         <div class="indispensable-cooked-food"><p><span class="indispensable-cooked">[4]</span>登録で始める</p></div>
 
     <div class="cooked-food-field">
-      <%= check_box_tag("check1") %>
-      <%= label_tag("check1", "成分表示（100gあたりの場合）") %>
+      <%= f.check_box :check1, id:"check1" %>
+      <%= f.label :check1, "成分表示（100gあたりの場合）" %>
     </div>
 
     <div class="cooked-food-field">
@@ -123,3 +123,5 @@
         </div>
       </div>
 </div>
+
+
