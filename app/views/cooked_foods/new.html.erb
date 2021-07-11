@@ -57,12 +57,12 @@
 
       <div class="cooked-food-field">
         <%= f.label :calorie, "エネルギー" %><br>
-        <%= f.text_field :calorie %><span>kcal</span>
+        <%= f.text_field :calorie, id:"calorie" %><span>kcal</span>
       </div>
 
       <div class="cooked-food-field">
         <%= f.label :protein, "タンパク質" %><br>
-        <%= f.text_field :protein %><span>g</span>
+        <%= f.text_field :protein, id:"protein" %><span>g</span>
       </div>
 
       <div class="cooked-food-field">
@@ -72,17 +72,19 @@
 
       <div class="cooked-food-field">
         <%= f.label :lipid, "脂質" %><br>
-        <%= f.text_field :lipid %><span>g</span>
+        <%= f.text_field :lipid, id:"lipid" %><span>g</span>
       </div>
 
       <div class="cooked-food-field">
-        <%= f.label :sugar_content, "糖質" %><br>
-        <%= f.text_field :sugar_content, id:"sugar-content" %><span>g</span>
+          <span>糖質</span>
+          <span>
+            <span id='sugar-content'></span>g
+          </span>
       </div>
 
       <div class="cooked-food-field">
         <%= f.label :fiber, "食物繊維" %><br>
-        <%= f.text_field :fiber %><span>g</span>
+        <%= f.text_field :fiber, id:"fiber" %><span>g</span>
       </div>
 
       <div class="cooked-food-field">
