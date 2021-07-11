@@ -26,8 +26,8 @@
         <div class="indispensable-cooked-food"><p><span class="indispensable-cooked">[4]</span>登録で始める</p></div>
 
     <div class="cooked-food-field">
-      <%= check_box_tag("check1") %>
-      <%= label_tag("check1", "成分表示（100gあたりの場合）") %>
+      <%= f.check_box :check1, id:"check1"  %>
+      <%= f.label :check1, "成分表示（100gあたりの場合）" %>
     </div>
 
     <div class="cooked-food-field">
@@ -52,37 +52,41 @@
 
       <div class="cooked-food-field">
         <%= f.label :meal_quantity, "内容量（重さなど）" %><br>
-        <%= f.text_field :meal_quantity %><span>g[ml]</span>
+        <%= f.text_field :meal_quantity, id:"meal-quantity" %><span>g[ml]</span>
       </div>
 
       <div class="cooked-food-field">
         <%= f.label :calorie, "エネルギー" %><br>
-        <%= f.text_field :calorie %><span>kcal</span>
+        <%= f.text_field :calorie, id:"calorie" %><span>kcal</span>
       </div>
 
       <div class="cooked-food-field">
         <%= f.label :protein, "タンパク質" %><br>
-        <%= f.text_field :protein %><span>g</span>
+        <%= f.text_field :protein, id:"protein" %><span>g</span>
       </div>
 
       <div class="cooked-food-field">
-        <%= f.label :carbohydrate, "炭水化物" %><br>
-        <%= f.text_field :carbohydrate %><span>g</span>
+          <span>炭水化物</span>
+          <span>
+            <span id='carbohydrate'></span>g
+          </span>
       </div>
 
       <div class="cooked-food-field">
         <%= f.label :lipid, "脂質" %><br>
-        <%= f.text_field :lipid %><span>g</span>
+        <%= f.text_field :lipid, id:"lipid" %><span>g</span>
       </div>
 
       <div class="cooked-food-field">
-        <%= f.label :sugar_content, "糖質" %><br>
-        <%= f.text_field :sugar_content %><span>g</span>
+          <span>糖質</span>
+          <span>
+            <span id='sugar-content'></span>g
+          </span>
       </div>
 
       <div class="cooked-food-field">
         <%= f.label :fiber, "食物繊維" %><br>
-        <%= f.text_field :fiber %><span>g</span>
+        <%= f.text_field :fiber, id:"fiber" %><span>g</span>
       </div>
 
       <div class="cooked-food-field">
