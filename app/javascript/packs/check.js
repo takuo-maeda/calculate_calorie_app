@@ -1,4 +1,5 @@
 
+// 追加
 window.addEventListener("load", () => {
   const gCalorie = document.getElementById("calorie");
   const gProtein = document.getElementById("protein");
