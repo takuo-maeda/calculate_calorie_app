@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_07_03_023622) do
 
-  create_table "circles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "circles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.date "days", null: false
     t.string "tming", null: false
     t.bigint "user_id", null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_07_03_023622) do
     t.index ["user_id"], name: "index_circles_on_user_id"
   end
 
-  create_table "cooked_foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "cooked_foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.date "meal_date", null: false
     t.integer "meal_time_id", null: false
     t.string "ganre", null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2021_07_03_023622) do
     t.index ["user_id"], name: "index_cooked_foods_on_user_id"
   end
 
-  create_table "cooking_foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "cooking_foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.bigint "cooking_id", null: false
     t.bigint "food_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -51,14 +51,14 @@ ActiveRecord::Schema.define(version: 2021_07_03_023622) do
     t.index ["food_id"], name: "index_cooking_foods_on_food_id"
   end
 
-  create_table "cookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "cookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "meal_name", null: false
     t.integer "meal_weight", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "food_stuffs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "food_stuffs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "food_stuff", null: false
     t.integer "calorie", null: false
     t.float "protein", null: false
@@ -71,26 +71,26 @@ ActiveRecord::Schema.define(version: 2021_07_03_023622) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "food_name", null: false
     t.integer "food_weight", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "fridges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "fridges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.integer "weight", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "home_cooked_meals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "home_cooked_meals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "family_name", null: false
     t.string "first_name", null: false
     t.string "family_name_prono", null: false
@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(version: 2021_07_03_023622) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
