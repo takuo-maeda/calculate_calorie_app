@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
     gSugarContent.innerHTML = (Math.round((gCalorie.value-gProtein.value * 4 -gLipid.value * 9)/4*10))/10-gFiber.value;
  
   });
-});M
+});
 
 
 
